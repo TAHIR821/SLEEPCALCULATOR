@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589"
-     crossorigin="anonymous"></script>
     <title>DreamScape Sleep Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ✅ AdSense Script - Loaded only ONCE in head -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589" crossorigin="anonymous"></script>
+    
     <style>
         :root {
             --primary: #6A5ACD;      /* Slate Blue */
@@ -265,6 +266,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
+            flex-wrap: wrap;
         }
 
         h1 {
@@ -1015,7 +1017,7 @@
             color: white;
             border-radius: 50%;
             width: 24px;
- height: 24px;
+            height: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1097,7 +1099,7 @@
         }
 
         body.night-mode .history-item {
-         background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.05);
             color: #CBD5E0;
         }
 
@@ -1124,20 +1126,220 @@
         .ad-container {
             display: flex;
             justify-content: center;
-            margin: 15px 0;
+            margin: 25px 0;
             width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+        
+        /* ===== NEW TIMER STYLES ===== */
+        .timer-section {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .timer-header {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .timer-header i {
+            animation: spin 2s linear infinite;
+        }
+
+        .timer-display {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00ccff);
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        .progress-text {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .continue-btn {
+            background: linear-gradient(135deg, #0066ff, #00ccff);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 102, 255, 0.6);
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #00c853, #00e676);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 200, 83, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 200, 83, 0.6);
+        }
+
+        .success-message {
+            color: #00ff88;
+            font-size: 1.1rem;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #00ff88;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 1rem;
+            margin: 10px 0;
+            padding: 8px;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #ff4444;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .fade-exit {
+            opacity: 1;
+        }
+
+        .fade-exit-active {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .timer-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.night-mode .timer-section {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== END NEW TIMER STYLES ===== */
+        
+        /* First timer special positioning */
+        .first-timer-wrapper {
+            margin: 15px 0 0 0;
+            width: 100%;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Ad optimization styles */
+        .ad-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .ad-container-responsive {
+            width: 100%;
+            min-height: 100px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="8390075266"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
     <!-- Animated background elements -->
     <div class="floating-moon"></div>
     <div class="floating-stars">
@@ -1162,24 +1364,52 @@
                 DreamScape Sleep Calculator
             </h1>
             
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589"
-     crossorigin="anonymous"></script>
-<!-- Tahir -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:50px"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="3145665055"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+            <!-- ===== FIRST TIMER - DIRECTLY BELOW HEADER AND ABOVE THEME TOGGLE ===== -->
+            <div class="first-timer-wrapper" style="width: 100%; margin-right: 10px;">
+                <div id="first-timer-section" class="timer-section" style="margin: 5px 0; padding: 15px;">
+                    <div class="timer-header" style="font-size: 1.2rem; margin-bottom: 10px;">
+                        <i class="fas fa-hourglass-half"></i>
+                        First Timer
+                        <span class="loading-spinner"></span>
+                    </div>
+                    <div class="timer-display" id="first-timer-display" style="font-size: 2.5rem; margin: 10px 0;">30s</div>
+                    <div class="progress-bar-container" style="margin: 10px 0;">
+                        <div class="progress-bar" id="first-progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <div class="progress-text" id="first-progress-text" style="font-size: 0.9rem;">100% complete</div>
+                    <div class="timer-status" id="first-timer-status" style="font-size: 0.9rem;">⏱️ Time Left: 30 seconds</div>
+                </div>
+                
+                <!-- Continue Button (Initially Hidden) -->
+                <div id="continue-btn-container" class="hidden" style="text-align: center; margin: 10px 0;">
+                    <button class="continue-btn" id="continue-btn" style="padding: 10px 30px; font-size: 1rem;">
+                        <i class="fas fa-arrow-right"></i>
+                        Continue to Next
+                    </button>
+                </div>
+            </div>
+            <!-- ===== END FIRST TIMER ===== -->
             
-            
-        
             <button class="theme-toggle" id="theme-toggle">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
         <p class="subtitle">Find your perfect bedtime based on sleep science</p>
+        
+        <!-- ✅ AD PLACEMENT 1: Top of calculator (good visibility) -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-container-responsive">
+                <!-- Tahir Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5612217645666589"
+                     data-ad-slot="3145665055"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
         
         <div class="calculator-container">
             <div class="time-selector">
@@ -1254,7 +1484,7 @@
                     <div class="current-time" id="current-time"></div>
                 </div>
                 
-                <!-- Calculate Button Moved Here -->
+                <!-- Calculate Button -->
                 <div class="calculate-btn-container">
                     <button class="calculate-btn" id="calculate-btn">
                         <i class="fas fa-calculator"></i>
@@ -1262,17 +1492,6 @@
                     </button>
                 </div>
                 
-                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589"
-     crossorigin="anonymous"></script>
-<!-- Tahir -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:50px"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="3145665055"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-            
                 <div class="alarm-option">
                     <input type="checkbox" id="set-alarm">
                     <label for="set-alarm">Set a reminder for this bedtime</label>
@@ -1375,6 +1594,21 @@
                     <div class="alarm-badge" style="display: none;">✓</div>
                 </div>
 
+                <!-- ✅ AD PLACEMENT 2: Between results and history (natural break) -->
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-container-responsive">
+                        <!-- Tahir Ad Unit -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-5612217645666589"
+                             data-ad-slot="3145665055"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                </div>
+
                 <div class="sleep-history">
                     <h3 class="section-title">
                         <i class="fas fa-history"></i>
@@ -1384,6 +1618,38 @@
                         <div class="empty-history">No recent calculations yet</div>
                     </div>
                 </div>
+
+                <!-- ===== SECOND TIMER SECTION - BELOW RECENT CALCULATIONS ===== -->
+                <div id="second-timer-wrapper" class="timer-container">
+                    <div id="second-timer-section" class="timer-section hidden">
+                        <div class="timer-header">
+                            <i class="fas fa-hourglass-end"></i>
+                            Second Timer
+                        </div>
+                        <div class="timer-display" id="second-timer-display">30s</div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="second-progress-bar" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-text" id="second-progress-text">100% complete</div>
+                        <div class="timer-status" id="second-timer-status">⏱️ Time Left: 30 seconds</div>
+                    </div>
+                    
+                    <!-- Download Button (Initially Hidden) -->
+                    <div id="download-btn-container" class="hidden" style="text-align: center; margin: 20px 0;">
+                        <button class="download-btn" id="download-btn">
+                            <i class="fas fa-download"></i>
+                            📥 Download File Now
+                        </button>
+                        <div id="download-error" class="error-message hidden"></div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <div id="timer-success" class="success-message hidden">
+                        <i class="fas fa-check-circle"></i>
+                        Timer completed successfully!
+                    </div>
+                </div>
+                <!-- ===== END SECOND TIMER SECTION ===== -->
                 
                 <div class="sleep-info">
                     <h3 class="info-title">
@@ -1395,39 +1661,217 @@
             </div>
         </div>
         
-        <amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="8390075266"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-        <!-- Second ad placed at the bottom of the container -->
+        <!-- ✅ AD PLACEMENT 3: Bottom of container (good for mobile users) -->
         <div class="ad-container">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589"
-     crossorigin="anonymous"></script>
-<!-- Tahir -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:320px;height:50px"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="3145665055"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-container-responsive">
+                <!-- Tahir Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5612217645666589"
+                     data-ad-slot="3145665055"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
         </div>
     </div>
-<amp-ad width="100vw" height="320"
-     type="adsense"
-     data-ad-client="ca-pub-5612217645666589"
-     data-ad-slot="8390075266"
-     data-auto-format="rspv"
-     data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
+    
     <div class="notification" id="notification">Copied to clipboard!</div>
 
     <script>
+        // ===== NEW TIMER CODE =====
+        // Download link variable - easily changeable
+        const DOWNLOAD_LINK = "https://example.com/download";
+        
+        // Timer variables
+        let firstTimerInterval;
+        let secondTimerInterval;
+        let firstTimeLeft = 30;
+        let secondTimeLeft = 30;
+        let firstTimerRunning = false;
+        let secondTimerRunning = false;
+        
+        // Get timer elements
+        const firstTimerSection = document.getElementById('first-timer-section');
+        const secondTimerSection = document.getElementById('second-timer-section');
+        const secondTimerWrapper = document.getElementById('second-timer-wrapper');
+        const continueBtnContainer = document.getElementById('continue-btn-container');
+        const downloadBtnContainer = document.getElementById('download-btn-container');
+        const continueBtn = document.getElementById('continue-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const timerSuccess = document.getElementById('timer-success');
+        const downloadError = document.getElementById('download-error');
+        
+        // Timer display elements
+        const firstTimerDisplay = document.getElementById('first-timer-display');
+        const secondTimerDisplay = document.getElementById('second-timer-display');
+        const firstProgressBar = document.getElementById('first-progress-bar');
+        const secondProgressBar = document.getElementById('second-progress-bar');
+        const firstProgressText = document.getElementById('first-progress-text');
+        const secondProgressText = document.getElementById('second-progress-text');
+        const firstTimerStatus = document.getElementById('first-timer-status');
+        const secondTimerStatus = document.getElementById('second-timer-status');
+        
+        // Start first timer on page load
+        window.addEventListener('load', function() {
+            startFirstTimer();
+        });
+        
+        // Start first timer function
+        function startFirstTimer() {
+            if (firstTimerRunning) return;
+            
+            firstTimerRunning = true;
+            firstTimeLeft = 30;
+            
+            updateFirstDisplay();
+            
+            firstTimerInterval = setInterval(function() {
+                firstTimeLeft--;
+                
+                if (firstTimeLeft < 0) {
+                    clearInterval(firstTimerInterval);
+                    firstTimerRunning = false;
+                    firstTimeLeft = 0;
+                    completeFirstTimer();
+                }
+                
+                updateFirstDisplay();
+            }, 1000);
+        }
+        
+        // Update first timer display
+        function updateFirstDisplay() {
+            firstTimerDisplay.textContent = firstTimeLeft + 's';
+            const progressPercentage = (firstTimeLeft / 30) * 100;
+            firstProgressBar.style.width = progressPercentage + '%';
+            firstProgressText.textContent = Math.round(progressPercentage) + '% complete';
+            firstTimerStatus.textContent = '⏱️ Time Left: ' + firstTimeLeft + ' seconds';
+        }
+        
+        // Complete first timer function
+        function completeFirstTimer() {
+            // Hide first timer section
+            firstTimerSection.style.opacity = '0';
+            firstTimerSection.style.transform = 'translateY(-20px)';
+            
+            setTimeout(function() {
+                firstTimerSection.classList.add('hidden');
+                
+                // Show continue button
+                continueBtnContainer.classList.remove('hidden');
+                
+                // Show success message
+                timerSuccess.classList.remove('hidden');
+                timerSuccess.textContent = '✓ First timer completed! Click Continue to proceed.';
+                
+                // Reset styles
+                firstTimerSection.style.opacity = '';
+                firstTimerSection.style.transform = '';
+            }, 300);
+        }
+        
+        // Continue button click handler - WITH AUTO SCROLL
+        continueBtn.addEventListener('click', function() {
+            // Hide continue button and success message
+            continueBtnContainer.classList.add('hidden');
+            timerSuccess.classList.add('hidden');
+            
+            // Show second timer section
+            secondTimerSection.classList.remove('hidden');
+            
+            // AUTO SCROLL to second timer with smooth animation
+            setTimeout(function() {
+                secondTimerWrapper.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center'
+                });
+            }, 100); // Small delay to ensure second timer is visible
+            
+            // Start second timer
+            startSecondTimer();
+        });
+        
+        // Start second timer function
+        function startSecondTimer() {
+            if (secondTimerRunning) return;
+            
+            secondTimerRunning = true;
+            secondTimeLeft = 30;
+            
+            updateSecondDisplay();
+            
+            secondTimerInterval = setInterval(function() {
+                secondTimeLeft--;
+                
+                if (secondTimeLeft < 0) {
+                    clearInterval(secondTimerInterval);
+                    secondTimerRunning = false;
+                    secondTimeLeft = 0;
+                    completeSecondTimer();
+                }
+                
+                updateSecondDisplay();
+            }, 1000);
+        }
+        
+        // Update second timer display
+        function updateSecondDisplay() {
+            secondTimerDisplay.textContent = secondTimeLeft + 's';
+            const progressPercentage = (secondTimeLeft / 30) * 100;
+            secondProgressBar.style.width = progressPercentage + '%';
+            secondProgressText.textContent = Math.round(progressPercentage) + '% complete';
+            secondTimerStatus.textContent = '⏱️ Time Left: ' + secondTimeLeft + ' seconds';
+        }
+        
+        // Complete second timer function
+        function completeSecondTimer() {
+            // Hide second timer section
+            secondTimerSection.style.opacity = '0';
+            secondTimerSection.style.transform = 'translateY(-20px)';
+            
+            setTimeout(function() {
+                secondTimerSection.classList.add('hidden');
+                
+                // Show download button
+                downloadBtnContainer.classList.remove('hidden');
+                
+                // Show success message
+                timerSuccess.classList.remove('hidden');
+                timerSuccess.textContent = '✓ All timers completed! Click Download to get your file.';
+                
+                // Reset styles
+                secondTimerSection.style.opacity = '';
+                secondTimerSection.style.transform = '';
+            }, 300);
+        }
+        
+        // Download button click handler
+        downloadBtn.addEventListener('click', function() {
+            try {
+                // Open download link in new tab
+                window.open(DOWNLOAD_LINK, '_blank');
+                
+                // Show success
+                downloadError.classList.add('hidden');
+                timerSuccess.textContent = '✓ Download started! Check your downloads folder.';
+                
+                // Optional: Change button text temporarily
+                const originalText = downloadBtn.innerHTML;
+                downloadBtn.innerHTML = '<i class="fas fa-check"></i> Downloading...';
+                setTimeout(function() {
+                    downloadBtn.innerHTML = originalText;
+                }, 2000);
+                
+            } catch (error) {
+                // Show error if link fails
+                downloadError.classList.remove('hidden');
+                downloadError.textContent = '❌ Download failed. Please try again.';
+            }
+        });
+        
+        // ===== ORIGINAL SLEEP CALCULATOR CODE =====
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize variables
             let selectedHour = 7;
