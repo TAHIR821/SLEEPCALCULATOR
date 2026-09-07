@@ -1020,10 +1020,27 @@
             }, 300); 
         }
         
+        // FIXED: Proper click handler for download button
         if(elements.downloadBtn) {
-            elements.downloadBtn.addEventListener('click', () => { 
-                window.open(DOWNLOAD_LINK, '_blank'); 
-                elements.timerSuccess.textContent = '✓ Download started! Thank you!';
+            elements.downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Open the download link in a new tab
+                window.open(DOWNLOAD_LINK, '_blank');
+                // Update success message
+                if(elements.timerSuccess) {
+                    elements.timerSuccess.textContent = '✓ Download started! Thank you!';
+                    elements.timerSuccess.classList.remove('hidden');
+                }
+                // Optional: disable button after click to prevent multiple downloads
+                this.disabled = true;
+                this.style.opacity = '0.6';
+                this.textContent = '✓ Downloading...';
+                // Re-enable after 5 seconds
+                setTimeout(() => {
+                    this.disabled = false;
+                    this.style.opacity = '1';
+                    this.innerHTML = '<i class="fas fa-download"></i> Download File Now';
+                }, 5000);
             });
         }
         
