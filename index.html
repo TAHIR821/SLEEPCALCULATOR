@@ -8,16 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AdSense Script with Auto Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589" crossorigin="anonymous"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-5612217645666589",
-            enable_page_level_ads: true,
-            overlays: { bottom: true }
-        });
-    </script>
-    
     <style>
         :root {
             --primary: #6A5ACD;
@@ -444,122 +434,6 @@
             display: none !important;
         }
 
-        /* Sticky Mobile Footer Ad */
-        .sticky-ad-mobile {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 8px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-        }
-        
-        .close-sticky-ad {
-            position: absolute;
-            top: -28px;
-            right: 5px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 4px 10px;
-            font-size: 12px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        /* Cookie Consent */
-        .cookie-consent {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            color: white;
-            padding: 15px 20px;
-            z-index: 1002;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .cookie-consent.show {
-            transform: translateY(0);
-        }
-        
-        .cookie-consent button {
-            background: var(--text-accent);
-            border: none;
-            padding: 8px 25px;
-            border-radius: 50px;
-            color: white;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        /* Affiliate Section */
-        .affiliate-section {
-            background: linear-gradient(135deg, rgba(106, 90, 205, 0.25), rgba(76, 175, 80, 0.25));
-            border-radius: 18px;
-            padding: 18px;
-            margin: 25px 0 15px;
-            text-align: center;
-        }
-        
-        .affiliate-section h3 {
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .affiliate-products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 12px 0;
-        }
-        
-        .affiliate-item {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50px;
-            padding: 8px 18px;
-            text-decoration: none;
-            color: inherit;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.2s;
-            font-size: 0.9rem;
-        }
-        
-        .affiliate-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        .support-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #FFDD00;
-            color: #333;
-            padding: 8px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 8px;
-            font-size: 0.9rem;
-        }
-        
         .continue-btn, .download-btn {
             cursor: pointer;
             transition: transform 0.2s;
@@ -580,7 +454,6 @@
             color: white !important;
         }
         
-        /* New Content Cards Styles */
         .info-cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -657,6 +530,88 @@
             gap: 5px;
         }
         
+        .sleep-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .settings-panel {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+        }
+        
+        .cycle-info {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .cycle-badge {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+        }
+        
+        .affiliate-section {
+            background: linear-gradient(135deg, rgba(106, 90, 205, 0.25), rgba(76, 175, 80, 0.25));
+            border-radius: 18px;
+            padding: 18px;
+            margin: 25px 0 15px;
+            text-align: center;
+        }
+        
+        .affiliate-section h3 {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .affiliate-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 12px 0;
+        }
+        
+        .affiliate-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 18px;
+            text-decoration: none;
+            color: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .affiliate-item:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFDD00;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding: 8px;
@@ -669,9 +624,6 @@
                 font-size: 1.4rem;
                 padding-right: 40px;
             }
-            .sticky-ad-mobile {
-                display: flex;
-            }
             .result-time {
                 font-size: 1.2rem;
             }
@@ -680,13 +632,6 @@
             }
             .timer-section {
                 padding: 15px;
-            }
-            .affiliate-products {
-                gap: 8px;
-            }
-            .affiliate-item {
-                padding: 6px 14px;
-                font-size: 0.8rem;
             }
             .info-cards-grid {
                 grid-template-columns: 1fr;
@@ -730,33 +675,64 @@
             color: var(--text-secondary);
         }
         
-        .sleep-info {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 15px;
-            border-left: 4px solid var(--primary);
+        .sticky-ad-mobile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
         }
         
-        .settings-panel {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 15px;
+        .close-sticky-ad {
+            position: absolute;
+            top: -28px;
+            right: 5px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 1001;
         }
         
-        .cycle-info {
+        .cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 15px 20px;
+            z-index: 1002;
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
             flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
         
-        .cycle-badge {
-            background: rgba(0, 0, 0, 0.05);
-            padding: 5px 12px;
+        .cookie-consent.show {
+            transform: translateY(0);
+        }
+        
+        .cookie-consent button {
+            background: var(--text-accent);
+            border: none;
+            padding: 8px 25px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -840,7 +816,7 @@
 
                 <div class="sleep-history"><h3 class="section-title"><i class="fas fa-history"></i> Recent Calculations</h3><div id="history-list"><div class="empty-history">No recent calculations yet</div></div></div>
 
-                <!-- Second Timer - Fixed spacing -->
+                <!-- Second Timer -->
                 <div id="second-timer-wrapper" style="margin-top: 20px;">
                     <div id="second-timer-section" class="timer-section hidden">
                         <div class="timer-header">
@@ -865,7 +841,7 @@
             </div>
         </div>
         
-        <!-- NEW INFORMATIVE CONTENT SECTION - Added for better AdSense performance -->
+        <!-- Info Cards -->
         <div class="info-cards-grid">
             <div class="info-card">
                 <i class="fas fa-chart-line"></i>
@@ -898,7 +874,6 @@
                 <p>Select your wake-up time (or bedtime), choose cycle length, and get optimal bedtimes. Copy any result with one click. Track your recent calculations below.</p>
             </div>
         </div>
-        <!-- END OF NEW CONTENT SECTION -->
         
         <!-- Affiliate Section -->
         <div class="affiliate-section">
@@ -912,7 +887,7 @@
             <a href="#" class="support-btn" target="_blank"><i class="fas fa-coffee"></i> Buy Me a Coffee</a>
         </div>
         
-        <!-- Ad 3 - Footer -->
+        <!-- Ad 3 -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -936,9 +911,14 @@
     <div class="notification" id="notification">Copied!</div>
 
     <script>
+        // ====================== DOWNLOAD CONFIG ======================
+        // CHANGE THIS URL TO YOUR ACTUAL DOWNLOAD LINK
         const DOWNLOAD_LINK = "https://www.mediafire.com/file/yg6bzck6xq218t4/{strongsat.site}#RIO.txt/file";
+        
+        // ====================== TIMER LOGIC ======================
         let firstTimerInterval, secondTimerInterval, firstTimeLeft = 30, secondTimeLeft = 30;
         let firstTimerRunning = false, secondTimerRunning = false;
+        let isDownloadVisible = false;
         
         const elements = {
             firstTimerSection: document.getElementById('first-timer-section'),
@@ -963,28 +943,37 @@
             updateFirstDisplay();
             firstTimerInterval = setInterval(() => {
                 firstTimeLeft--;
-                if (firstTimeLeft < 0) { clearInterval(firstTimerInterval); firstTimerRunning = false; completeFirstTimer(); }
-                else updateFirstDisplay();
+                if (firstTimeLeft < 0) { 
+                    clearInterval(firstTimerInterval); 
+                    firstTimerRunning = false; 
+                    completeFirstTimer(); 
+                } else {
+                    updateFirstDisplay();
+                }
             }, 1000);
         }
+        
         function updateFirstDisplay() { 
-            elements.firstTimerDisplay.textContent = firstTimeLeft + 's'; 
-            elements.firstProgressBar.style.width = (firstTimeLeft/30*100)+'%'; 
-            elements.firstTimerStatus.textContent = '⏱️ Time Left: ' + firstTimeLeft + ' seconds';
+            if (elements.firstTimerDisplay) elements.firstTimerDisplay.textContent = firstTimeLeft + 's'; 
+            if (elements.firstProgressBar) elements.firstProgressBar.style.width = (firstTimeLeft/30*100)+'%'; 
+            if (elements.firstTimerStatus) elements.firstTimerStatus.textContent = '⏱️ Time Left: ' + firstTimeLeft + ' seconds';
         }
+        
         function completeFirstTimer() { 
-            elements.firstTimerSection.style.opacity = '0.5';
-            setTimeout(() => { 
-                elements.firstTimerSection.classList.add('hidden'); 
-                elements.continueBtnContainer.classList.remove('hidden'); 
-                elements.timerSuccess.classList.remove('hidden'); 
-                elements.timerSuccess.textContent = '✓ First timer complete!'; 
-                elements.firstTimerSection.style.opacity = '';
-            }, 300); 
+            if (elements.firstTimerSection) {
+                elements.firstTimerSection.style.opacity = '0.5';
+                setTimeout(() => { 
+                    elements.firstTimerSection.classList.add('hidden'); 
+                    elements.continueBtnContainer.classList.remove('hidden'); 
+                    elements.timerSuccess.classList.remove('hidden'); 
+                    elements.timerSuccess.textContent = '✓ First timer complete!'; 
+                    elements.firstTimerSection.style.opacity = '';
+                }, 300);
+            }
         }
         
         if(elements.continueBtn) {
-            elements.continueBtn.addEventListener('click', () => {
+            elements.continueBtn.addEventListener('click', function() {
                 elements.continueBtnContainer.classList.add('hidden');
                 elements.timerSuccess.classList.add('hidden');
                 elements.secondTimerSection.classList.remove('hidden');
@@ -1000,51 +989,100 @@
             updateSecondDisplay();
             secondTimerInterval = setInterval(() => {
                 secondTimeLeft--;
-                if (secondTimeLeft < 0) { clearInterval(secondTimerInterval); secondTimerRunning = false; completeSecondTimer(); }
-                else updateSecondDisplay();
+                if (secondTimeLeft < 0) { 
+                    clearInterval(secondTimerInterval); 
+                    secondTimerRunning = false; 
+                    completeSecondTimer(); 
+                } else {
+                    updateSecondDisplay();
+                }
             }, 1000);
         }
+        
         function updateSecondDisplay() { 
-            elements.secondTimerDisplay.textContent = secondTimeLeft + 's'; 
-            elements.secondProgressBar.style.width = (secondTimeLeft/30*100)+'%'; 
-            elements.secondTimerStatus.textContent = '⏱️ Time Left: ' + secondTimeLeft + ' seconds';
+            if (elements.secondTimerDisplay) elements.secondTimerDisplay.textContent = secondTimeLeft + 's'; 
+            if (elements.secondProgressBar) elements.secondProgressBar.style.width = (secondTimeLeft/30*100)+'%'; 
+            if (elements.secondTimerStatus) elements.secondTimerStatus.textContent = '⏱️ Time Left: ' + secondTimeLeft + ' seconds';
         }
+        
         function completeSecondTimer() { 
-            elements.secondTimerSection.style.opacity = '0.5';
-            setTimeout(() => { 
-                elements.secondTimerSection.classList.add('hidden'); 
-                elements.downloadBtnContainer.classList.remove('hidden'); 
-                elements.timerSuccess.classList.remove('hidden'); 
-                elements.timerSuccess.textContent = '✓ All timers complete! You can now download.'; 
-                elements.secondTimerSection.style.opacity = '';
-            }, 300); 
+            if (elements.secondTimerSection) {
+                elements.secondTimerSection.style.opacity = '0.5';
+                setTimeout(() => { 
+                    elements.secondTimerSection.classList.add('hidden'); 
+                    elements.downloadBtnContainer.classList.remove('hidden'); 
+                    isDownloadVisible = true;
+                    elements.timerSuccess.classList.remove('hidden'); 
+                    elements.timerSuccess.textContent = '✓ All timers complete! Click Download Now.'; 
+                    elements.secondTimerSection.style.opacity = '';
+                    
+                    // ===== FIX: Attach download event listener HERE =====
+                    attachDownloadHandler();
+                }, 300);
+            }
         }
         
-        // FIXED: Proper click handler for download button
-        if(elements.downloadBtn) {
-            elements.downloadBtn.addEventListener('click', function(e) {
+        // ====================== DOWNLOAD HANDLER (FIXED) ======================
+        function attachDownloadHandler() {
+            const downloadBtn = document.getElementById('download-btn');
+            if (!downloadBtn) {
+                console.error('Download button not found!');
+                return;
+            }
+            
+            // Remove any existing listeners to avoid duplicates
+            const newBtn = downloadBtn.cloneNode(true);
+            downloadBtn.parentNode.replaceChild(newBtn, downloadBtn);
+            
+            // Attach fresh click listener
+            newBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                // Open the download link in a new tab
-                window.open(DOWNLOAD_LINK, '_blank');
-                // Update success message
-                if(elements.timerSuccess) {
-                    elements.timerSuccess.textContent = '✓ Download started! Thank you!';
-                    elements.timerSuccess.classList.remove('hidden');
-                }
-                // Optional: disable button after click to prevent multiple downloads
+                e.stopPropagation();
+                
+                console.log('Download button clicked!');
+                
+                // Show feedback
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Starting download...';
+                this.style.opacity = '0.7';
                 this.disabled = true;
-                this.style.opacity = '0.6';
-                this.textContent = '✓ Downloading...';
-                // Re-enable after 5 seconds
-                setTimeout(() => {
-                    this.disabled = false;
+                
+                // Open download link
+                try {
+                    window.open(DOWNLOAD_LINK, '_blank');
+                    
+                    // Update success message
+                    const successEl = document.getElementById('timer-success');
+                    if (successEl) {
+                        successEl.textContent = '✓ Download started! Check your browser.';
+                        successEl.classList.remove('hidden');
+                    }
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+                        this.style.opacity = '1';
+                        this.disabled = false;
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                    }, 3000);
+                    
+                } catch(err) {
+                    console.error('Download error:', err);
+                    this.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error - Try Again';
                     this.style.opacity = '1';
-                    this.innerHTML = '<i class="fas fa-download"></i> Download File Now';
-                }, 5000);
+                    this.disabled = false;
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 3000);
+                }
             });
+            
+            console.log('Download handler attached successfully!');
         }
         
-        // Sleep Calculator Logic
+        // ====================== SLEEP CALCULATOR LOGIC ======================
         document.addEventListener('DOMContentLoaded', function() {
             let selectedHour = 7, selectedMinute = 0, isAM = true, isWakeUpMode = true, cycleLength = 90, fallAsleepTime = 15, calculationHistory = [];
             const hourScroller = document.getElementById('hour-scroller'), minuteScroller = document.getElementById('minute-scroller'), timeDisplay = document.getElementById('time-display');
@@ -1122,7 +1160,7 @@
             updateTimeDisplay(); calculateTimes(); loadHistory(); setInterval(updateCurrentTime, 60000); updateCurrentTime();
         });
         
-        // Cookie Consent
+        // ====================== COOKIE CONSENT ======================
         const cookieConsent = document.getElementById('cookie-consent');
         if(cookieConsent && !localStorage.getItem('cookieAccepted')) { cookieConsent.classList.add('show'); }
         const acceptBtn = document.getElementById('accept-cookies');
@@ -1130,14 +1168,30 @@
             acceptBtn.addEventListener('click', () => { localStorage.setItem('cookieAccepted', 'true'); if(cookieConsent) cookieConsent.classList.remove('show'); });
         }
         
-        // Sticky Ad Close
+        // ====================== STICKY AD CLOSE ======================
         const closeSticky = document.getElementById('close-sticky-ad');
         const stickyAd = document.getElementById('sticky-ad-mobile');
         if(closeSticky && stickyAd) {
             closeSticky.addEventListener('click', () => { stickyAd.style.display = 'none'; });
         }
         
-        window.addEventListener('load', () => { startFirstTimer(); });
+        // ====================== START FIRST TIMER ON LOAD ======================
+        window.addEventListener('load', function() {
+            // Small delay to ensure DOM is fully ready
+            setTimeout(function() {
+                startFirstTimer();
+                console.log('First timer started!');
+            }, 500);
+        });
+        
+        // Fallback: If download button is already visible (edge case)
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.getElementById('download-btn');
+            if (downloadBtn && downloadBtn.closest('#download-btn-container') && 
+                !downloadBtn.closest('#download-btn-container').classList.contains('hidden')) {
+                attachDownloadHandler();
+            }
+        });
     </script>
 </body>
 </html>
