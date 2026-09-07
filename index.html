@@ -8,6 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- ============================================================ -->
+    <!-- GOOGLE ADSENSE - FULLY ACTIVE                                 -->
+    <!-- ============================================================ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589" crossorigin="anonymous"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5612217645666589",
+            enable_page_level_ads: true,
+            overlays: { bottom: true }
+        });
+    </script>
+    
     <style>
         :root {
             --primary: #6A5ACD;
@@ -20,29 +32,21 @@
             --night-bg: #0f172a;
             --night-primary: #818cf8;
             --night-secondary: #4ade80;
-            
             --text-primary: #2D3748;
             --text-secondary: #4A5568;
             --text-light: #F7FAFC;
             --text-accent: #4C51BF;
             --text-success: #38A169;
-            
             --bg-light: #F8FAFC;
             --bg-card: #FFFFFF;
             --bg-card-dark: #1E293B;
-            
             --glass-light: rgba(255, 255, 255, 0.7);
             --glass-dark: rgba(15, 23, 42, 0.7);
             --glass-border-light: rgba(255, 255, 255, 0.5);
             --glass-border-dark: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
         body {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
@@ -87,7 +91,6 @@
             border-radius: 50%;
             animation: twinkle 5s infinite;
         }
-
         .star:nth-child(1) { top: 20%; left: 5%; width: 3px; height: 3px; }
         .star:nth-child(2) { top: 60%; left: 2%; width: 4px; height: 4px; }
         .star:nth-child(3) { top: 40%; left: 10%; width: 2px; height: 2px; }
@@ -149,11 +152,7 @@
             padding-right: 50px;
         }
 
-        .logo-icon {
-            font-size: 2rem;
-            animation: pulse 2s infinite;
-        }
-
+        .logo-icon { font-size: 2rem; animation: pulse 2s infinite; }
         .theme-toggle {
             background: rgba(255, 255, 255, 0.2);
             border: none;
@@ -322,11 +321,7 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
-        .ampm-btn.active {
-            background: var(--text-accent);
-            color: white;
-        }
+        .ampm-btn.active { background: var(--text-accent); color: white; }
 
         .calculate-btn {
             width: 100%;
@@ -360,16 +355,8 @@
             width: 100%;
         }
 
-        .result-time {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .result-desc {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
+        .result-time { font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; }
+        .result-desc { font-size: 0.8rem; color: var(--text-secondary); }
 
         .copy-btn {
             background: rgba(0, 0, 0, 0.1);
@@ -414,11 +401,7 @@
             transition: all 0.3s;
             z-index: 1000;
         }
-
-        .notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
+        .notification.show { transform: translateY(0); opacity: 1; }
 
         .history-item {
             background: rgba(0, 0, 0, 0.05);
@@ -430,37 +413,24 @@
             border-left: 3px solid var(--text-accent);
         }
 
-        .hidden {
-            display: none !important;
-        }
+        .hidden { display: none !important; }
 
         .continue-btn, .download-btn {
             cursor: pointer;
             transition: transform 0.2s;
         }
-        
-        .continue-btn:hover, .download-btn:hover {
-            transform: scale(1.02);
-        }
-        
-        .current-time {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 0.85rem;
-        }
-        
-        .mode-btn.active {
-            background: var(--text-accent) !important;
-            color: white !important;
-        }
-        
+        .continue-btn:hover, .download-btn:hover { transform: scale(1.02); }
+
+        .current-time { text-align: center; margin-top: 12px; font-size: 0.85rem; }
+        .mode-btn.active { background: var(--text-accent) !important; color: white !important; }
+
         .info-cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin: 30px 0 20px;
         }
-        
+
         .info-card {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(5px);
@@ -469,57 +439,17 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.25);
-        }
-        
-        body.night-mode .info-card {
-            background: rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.night-mode .info-card:hover {
-            background: rgba(0, 0, 0, 0.45);
-        }
-        
-        .info-card i {
-            font-size: 2rem;
-            color: var(--text-accent);
-            margin-bottom: 12px;
-        }
-        
-        .info-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        
-        .info-card p, .info-card ul {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: inherit;
-            opacity: 0.9;
-        }
-        
-        .info-card ul {
-            padding-left: 18px;
-            margin-top: 8px;
-        }
-        
-        .info-card li {
-            margin-bottom: 5px;
-        }
-        
-        .age-sleep-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
+        .info-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); background: rgba(255, 255, 255, 0.25); }
+        body.night-mode .info-card { background: rgba(0, 0, 0, 0.3); border-color: rgba(255, 255, 255, 0.1); }
+        body.night-mode .info-card:hover { background: rgba(0, 0, 0, 0.45); }
+
+        .info-card i { font-size: 2rem; color: var(--text-accent); margin-bottom: 12px; }
+        .info-card h3 { font-size: 1.2rem; margin-bottom: 12px; font-weight: 600; }
+        .info-card p, .info-card ul { font-size: 0.9rem; line-height: 1.5; color: inherit; opacity: 0.9; }
+        .info-card ul { padding-left: 18px; margin-top: 8px; }
+        .info-card li { margin-bottom: 5px; }
+
+        .age-sleep-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .age-item {
             background: rgba(0, 0, 0, 0.1);
             border-radius: 20px;
@@ -529,7 +459,7 @@
             align-items: center;
             gap: 5px;
         }
-        
+
         .sleep-info {
             margin-top: 20px;
             padding: 15px;
@@ -537,28 +467,22 @@
             border-radius: 15px;
             border-left: 4px solid var(--primary);
         }
-        
+
         .settings-panel {
             margin-top: 20px;
             padding: 15px;
             background: rgba(0, 0, 0, 0.05);
             border-radius: 15px;
         }
-        
-        .cycle-info {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        
+
+        .cycle-info { display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap; }
         .cycle-badge {
             background: rgba(0, 0, 0, 0.05);
             padding: 5px 12px;
             border-radius: 50px;
             font-size: 0.85rem;
         }
-        
+
         .affiliate-section {
             background: linear-gradient(135deg, rgba(106, 90, 205, 0.25), rgba(76, 175, 80, 0.25));
             border-radius: 18px;
@@ -566,20 +490,8 @@
             margin: 25px 0 15px;
             text-align: center;
         }
-        
-        .affiliate-section h3 {
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .affiliate-products {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 12px 0;
-        }
-        
+        .affiliate-section h3 { margin-bottom: 12px; font-size: 1.1rem; }
+        .affiliate-products { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 12px 0; }
         .affiliate-item {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 50px;
@@ -592,12 +504,7 @@
             transition: transform 0.2s;
             font-size: 0.9rem;
         }
-        
-        .affiliate-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
+        .affiliate-item:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.3); }
         .support-btn {
             display: inline-flex;
             align-items: center;
@@ -611,70 +518,7 @@
             margin-top: 8px;
             font-size: 0.9rem;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 8px;
-                padding-bottom: 85px;
-            }
-            .container {
-                padding: 15px;
-            }
-            h1 {
-                font-size: 1.4rem;
-                padding-right: 40px;
-            }
-            .result-time {
-                font-size: 1.2rem;
-            }
-            .timer-display {
-                font-size: 2.5rem;
-            }
-            .timer-section {
-                padding: 15px;
-            }
-            .info-cards-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 0.8s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .empty-history {
-            text-align: center;
-            font-style: italic;
-            padding: 20px;
-            color: var(--text-secondary);
-        }
-        
+
         .sticky-ad-mobile {
             position: fixed;
             bottom: 0;
@@ -688,7 +532,6 @@
             padding: 8px;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
         }
-        
         .close-sticky-ad {
             position: absolute;
             top: -28px;
@@ -702,7 +545,7 @@
             cursor: pointer;
             z-index: 1001;
         }
-        
+
         .cookie-consent {
             position: fixed;
             bottom: 0;
@@ -720,11 +563,7 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-        
-        .cookie-consent.show {
-            transform: translateY(0);
-        }
-        
+        .cookie-consent.show { transform: translateY(0); }
         .cookie-consent button {
             background: var(--text-accent);
             border: none;
@@ -734,6 +573,39 @@
             cursor: pointer;
             font-weight: 500;
         }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .empty-history {
+            text-align: center;
+            font-style: italic;
+            padding: 20px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 8px; padding-bottom: 85px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.4rem; padding-right: 40px; }
+            .result-time { font-size: 1.2rem; }
+            .timer-display { font-size: 2.5rem; }
+            .timer-section { padding: 15px; }
+            .info-cards-grid { grid-template-columns: 1fr; gap: 15px; }
+            .sticky-ad-mobile { display: flex; }
+        }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
@@ -744,12 +616,13 @@
     </div>
     
     <div class="container">
+        <!-- ===== HEADER ===== -->
         <div class="header">
             <h1><i class="fas fa-moon logo-icon"></i> DreamScape Sleep Calculator</h1>
             <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
         </div>
         
-        <!-- First Timer -->
+        <!-- ===== FIRST TIMER ===== -->
         <div class="first-timer-wrapper">
             <div id="first-timer-section" class="timer-section">
                 <div class="timer-header">
@@ -767,7 +640,7 @@
             </div>
         </div>
         
-        <!-- Ad 1 -->
+        <!-- ===== AD 1: TOP BANNER ===== -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -776,6 +649,7 @@
         
         <p class="subtitle" style="text-align: center; margin-bottom: 20px;">🌙 Find your perfect bedtime based on sleep science</p>
         
+        <!-- ===== CALCULATOR ===== -->
         <div class="calculator-container">
             <div class="time-selector">
                 <h2 class="section-title"><i class="fas fa-clock"></i> Select Wake-Up Time</h2>
@@ -807,7 +681,7 @@
                 <div class="result-card" data-cycles="5"><div><div class="result-time" id="result2">11:15 PM</div><div class="result-desc" id="desc2">For 7.5 hours of sleep (5 cycles)</div></div><div><button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button></div></div>
                 <div class="result-card" data-cycles="4"><div><div class="result-time" id="result3">12:45 AM</div><div class="result-desc" id="desc3">For 6 hours of sleep (4 cycles)</div></div><div><button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button></div></div>
 
-                <!-- Ad 2 -->
+                <!-- ===== AD 2: MIDDLE RECTANGLE ===== -->
                 <div class="ad-container">
                     <div class="ad-label">Advertisement</div>
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
@@ -816,7 +690,7 @@
 
                 <div class="sleep-history"><h3 class="section-title"><i class="fas fa-history"></i> Recent Calculations</h3><div id="history-list"><div class="empty-history">No recent calculations yet</div></div></div>
 
-                <!-- Second Timer -->
+                <!-- ===== SECOND TIMER + DOWNLOAD BUTTON ===== -->
                 <div id="second-timer-wrapper" style="margin-top: 20px;">
                     <div id="second-timer-section" class="timer-section hidden">
                         <div class="timer-header">
@@ -841,7 +715,7 @@
             </div>
         </div>
         
-        <!-- Info Cards -->
+        <!-- ===== INFO CARDS ===== -->
         <div class="info-cards-grid">
             <div class="info-card">
                 <i class="fas fa-chart-line"></i>
@@ -875,7 +749,7 @@
             </div>
         </div>
         
-        <!-- Affiliate Section -->
+        <!-- ===== AFFILIATE SECTION ===== -->
         <div class="affiliate-section">
             <h3><i class="fas fa-shopping-cart"></i> Improve Your Sleep Quality</h3>
             <div class="affiliate-products">
@@ -887,7 +761,7 @@
             <a href="#" class="support-btn" target="_blank"><i class="fas fa-coffee"></i> Buy Me a Coffee</a>
         </div>
         
-        <!-- Ad 3 -->
+        <!-- ===== AD 3: FOOTER BANNER ===== -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -895,14 +769,14 @@
         </div>
     </div>
     
-    <!-- Sticky Mobile Footer Ad -->
+    <!-- ===== STICKY MOBILE AD ===== -->
     <div id="sticky-ad-mobile" class="sticky-ad-mobile">
         <button class="close-sticky-ad" id="close-sticky-ad">✕ Close</button>
         <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
     
-    <!-- Cookie Consent -->
+    <!-- ===== COOKIE CONSENT ===== -->
     <div id="cookie-consent" class="cookie-consent">
         <span>🍪 We use cookies to personalize ads and improve your experience.</span>
         <button id="accept-cookies">Accept</button>
@@ -910,15 +784,17 @@
     
     <div class="notification" id="notification">Copied!</div>
 
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT - FULLY WORKING                                    -->
+    <!-- ============================================================ -->
     <script>
-        // ====================== DOWNLOAD CONFIG ======================
-        // CHANGE THIS URL TO YOUR ACTUAL DOWNLOAD LINK
+        // ===== DOWNLOAD CONFIG =====
+        // CHANGE THIS TO YOUR ACTUAL DOWNLOAD LINK
         const DOWNLOAD_LINK = "https://www.mediafire.com/file/yg6bzck6xq218t4/{strongsat.site}#RIO.txt/file";
         
-        // ====================== TIMER LOGIC ======================
+        // ===== TIMER LOGIC =====
         let firstTimerInterval, secondTimerInterval, firstTimeLeft = 30, secondTimeLeft = 30;
         let firstTimerRunning = false, secondTimerRunning = false;
-        let isDownloadVisible = false;
         
         const elements = {
             firstTimerSection: document.getElementById('first-timer-section'),
@@ -1011,18 +887,17 @@
                 setTimeout(() => { 
                     elements.secondTimerSection.classList.add('hidden'); 
                     elements.downloadBtnContainer.classList.remove('hidden'); 
-                    isDownloadVisible = true;
                     elements.timerSuccess.classList.remove('hidden'); 
                     elements.timerSuccess.textContent = '✓ All timers complete! Click Download Now.'; 
                     elements.secondTimerSection.style.opacity = '';
                     
-                    // ===== FIX: Attach download event listener HERE =====
+                    // ===== ATTACH DOWNLOAD HANDLER =====
                     attachDownloadHandler();
                 }, 300);
             }
         }
         
-        // ====================== DOWNLOAD HANDLER (FIXED) ======================
+        // ===== DOWNLOAD HANDLER (FIXED - WORKING) =====
         function attachDownloadHandler() {
             const downloadBtn = document.getElementById('download-btn');
             if (!downloadBtn) {
@@ -1082,7 +957,7 @@
             console.log('Download handler attached successfully!');
         }
         
-        // ====================== SLEEP CALCULATOR LOGIC ======================
+        // ===== SLEEP CALCULATOR LOGIC =====
         document.addEventListener('DOMContentLoaded', function() {
             let selectedHour = 7, selectedMinute = 0, isAM = true, isWakeUpMode = true, cycleLength = 90, fallAsleepTime = 15, calculationHistory = [];
             const hourScroller = document.getElementById('hour-scroller'), minuteScroller = document.getElementById('minute-scroller'), timeDisplay = document.getElementById('time-display');
@@ -1160,7 +1035,7 @@
             updateTimeDisplay(); calculateTimes(); loadHistory(); setInterval(updateCurrentTime, 60000); updateCurrentTime();
         });
         
-        // ====================== COOKIE CONSENT ======================
+        // ===== COOKIE CONSENT =====
         const cookieConsent = document.getElementById('cookie-consent');
         if(cookieConsent && !localStorage.getItem('cookieAccepted')) { cookieConsent.classList.add('show'); }
         const acceptBtn = document.getElementById('accept-cookies');
@@ -1168,29 +1043,19 @@
             acceptBtn.addEventListener('click', () => { localStorage.setItem('cookieAccepted', 'true'); if(cookieConsent) cookieConsent.classList.remove('show'); });
         }
         
-        // ====================== STICKY AD CLOSE ======================
+        // ===== STICKY AD CLOSE =====
         const closeSticky = document.getElementById('close-sticky-ad');
         const stickyAd = document.getElementById('sticky-ad-mobile');
         if(closeSticky && stickyAd) {
             closeSticky.addEventListener('click', () => { stickyAd.style.display = 'none'; });
         }
         
-        // ====================== START FIRST TIMER ON LOAD ======================
+        // ===== START FIRST TIMER ON LOAD =====
         window.addEventListener('load', function() {
-            // Small delay to ensure DOM is fully ready
             setTimeout(function() {
                 startFirstTimer();
                 console.log('First timer started!');
             }, 500);
-        });
-        
-        // Fallback: If download button is already visible (edge case)
-        document.addEventListener('DOMContentLoaded', function() {
-            const downloadBtn = document.getElementById('download-btn');
-            if (downloadBtn && downloadBtn.closest('#download-btn-container') && 
-                !downloadBtn.closest('#download-btn-container').classList.contains('hidden')) {
-                attachDownloadHandler();
-            }
         });
     </script>
 </body>
