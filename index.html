@@ -8,19 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- ============================================================ -->
-    <!-- GOOGLE ADSENSE - FULLY ACTIVE                                 -->
-    <!-- ============================================================ -->
+    <!-- ===== ADSENSE SCRIPT (ONLY MANUAL ADS - NO AUTO ADS) ===== -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612217645666589" crossorigin="anonymous"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-5612217645666589",
-            enable_page_level_ads: true,
-            overlays: { bottom: true }
-        });
-    </script>
+    <!-- AUTO ADS REMOVED - Only manual ads will show -->
     
     <style>
+        /* ===== ALL CSS SAME ===== */
         :root {
             --primary: #6A5ACD;
             --secondary: #4CAF50;
@@ -378,6 +371,7 @@
             background: rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             padding: 10px 0;
+            min-height: 90px;
         }
 
         .ad-label {
@@ -418,6 +412,8 @@
         .continue-btn, .download-btn {
             cursor: pointer;
             transition: transform 0.2s;
+            position: relative;
+            z-index: 10;
         }
         .continue-btn:hover, .download-btn:hover { transform: scale(1.02); }
 
@@ -525,7 +521,7 @@
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
+            z-index: 999;
             display: none;
             justify-content: center;
             align-items: center;
@@ -591,6 +587,17 @@
             color: var(--text-secondary);
         }
 
+        /* ===== DOWNLOAD BUTTON - HIGH Z-INDEX TO AVOID AD OVERLAY ===== */
+        #download-btn-container {
+            position: relative;
+            z-index: 50;
+        }
+        
+        #download-btn {
+            position: relative;
+            z-index: 51;
+        }
+
         @media (max-width: 768px) {
             body { padding: 8px; padding-bottom: 85px; }
             .container { padding: 15px; }
@@ -636,11 +643,11 @@
                 <div class="timer-status" id="first-timer-status">⏱️ Time Left: 30 seconds</div>
             </div>
             <div id="continue-btn-container" class="hidden" style="text-align: center; margin: 15px 0;">
-                <button class="continue-btn" id="continue-btn" style="padding: 12px 35px; background: linear-gradient(135deg, #0066ff, #00ccff); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600;"><i class="fas fa-arrow-right"></i> Continue to Next</button>
+                <button class="continue-btn" id="continue-btn" style="padding: 12px 35px; background: linear-gradient(135deg, #0066ff, #00ccff); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; position: relative; z-index: 10;"><i class="fas fa-arrow-right"></i> Continue to Next</button>
             </div>
         </div>
         
-        <!-- ===== AD 1: TOP BANNER ===== -->
+        <!-- ===== AD 1: TOP BANNER (MANUAL) ===== -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -681,7 +688,7 @@
                 <div class="result-card" data-cycles="5"><div><div class="result-time" id="result2">11:15 PM</div><div class="result-desc" id="desc2">For 7.5 hours of sleep (5 cycles)</div></div><div><button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button></div></div>
                 <div class="result-card" data-cycles="4"><div><div class="result-time" id="result3">12:45 AM</div><div class="result-desc" id="desc3">For 6 hours of sleep (4 cycles)</div></div><div><button class="copy-btn" title="Copy"><i class="fas fa-copy"></i></button></div></div>
 
-                <!-- ===== AD 2: MIDDLE RECTANGLE ===== -->
+                <!-- ===== AD 2: MIDDLE RECTANGLE (MANUAL) ===== -->
                 <div class="ad-container">
                     <div class="ad-label">Advertisement</div>
                     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
@@ -702,8 +709,12 @@
                         </div>
                         <div class="timer-status" id="second-timer-status">⏱️ Time Left: 30 seconds</div>
                     </div>
-                    <div id="download-btn-container" class="hidden" style="text-align: center; margin: 20px 0;">
-                        <button class="download-btn" id="download-btn" style="padding: 14px 45px; background: linear-gradient(135deg, #00c853, #00e676); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 1rem;"><i class="fas fa-download"></i> Download File Now</button>
+                    
+                    <!-- ===== DOWNLOAD BUTTON WITH HIGH Z-INDEX ===== -->
+                    <div id="download-btn-container" class="hidden" style="text-align: center; margin: 20px 0; position: relative; z-index: 100;">
+                        <button class="download-btn" id="download-btn" style="padding: 14px 45px; background: linear-gradient(135deg, #00c853, #00e676); color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 1rem; position: relative; z-index: 101; box-shadow: 0 4px 20px rgba(0,200,80,0.4);">
+                            <i class="fas fa-download"></i> Download File Now
+                        </button>
                     </div>
                     <div id="timer-success" class="hidden" style="color: #00ff88; text-align: center; margin: 10px 0; font-weight: 500;"></div>
                 </div>
@@ -761,7 +772,7 @@
             <a href="#" class="support-btn" target="_blank"><i class="fas fa-coffee"></i> Buy Me a Coffee</a>
         </div>
         
-        <!-- ===== AD 3: FOOTER BANNER ===== -->
+        <!-- ===== AD 3: FOOTER BANNER (MANUAL) ===== -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -769,7 +780,7 @@
         </div>
     </div>
     
-    <!-- ===== STICKY MOBILE AD ===== -->
+    <!-- ===== STICKY MOBILE AD (MANUAL) ===== -->
     <div id="sticky-ad-mobile" class="sticky-ad-mobile">
         <button class="close-sticky-ad" id="close-sticky-ad">✕ Close</button>
         <ins class="adsbygoogle" style="display:inline-block;width:320px;height:100px" data-ad-client="ca-pub-5612217645666589" data-ad-slot="3145665055" data-ad-format="auto"></ins>
@@ -785,7 +796,7 @@
     <div class="notification" id="notification">Copied!</div>
 
     <!-- ============================================================ -->
-    <!-- JAVASCRIPT - FULLY WORKING                                    -->
+    <!-- JAVASCRIPT                                                    -->
     <!-- ============================================================ -->
     <script>
         // ===== DOWNLOAD CONFIG =====
